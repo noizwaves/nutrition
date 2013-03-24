@@ -1,0 +1,89 @@
+{
+    "coles-muslie-almond": {
+        "nutrition-per-100g": {
+            "energy": 1560,
+            "protein": 12.3,
+            "fat": 9.9,
+            "saturated-fat": 2.8,
+            "carbohydrate": 51.7,
+            "sugars": 19.7,
+            "dietary-fibre": 13,
+            "sodium": 6
+        }
+    },
+    "sanitarium-almond-milk": {
+        "nutrition-per-100ml": {
+            "energy": 130,
+            "protein": 0.5,
+            "fat": 1.2,
+            "saturated-fat": 0.1,
+            "trans-fat": 0,
+            "polyunsaturated-fat": 0.3,
+            "monounsaturated-fat": 0.8,
+            "carbohydrate": 4.6,
+            "sugars": 4.4,
+            "dietary-fibre": 0.3,
+            "sodium": 35,
+            "potassium": 15,
+            "calcium": 75,
+            "vitamin-e": 0.4
+        }
+    },
+    "coles-soy-milk-regular": {
+        "nutrition-per-100ml": {
+            "energy": 244,
+            "protein": 3.1,
+            "fat": 3.0,
+            "saturated-fat": 0.2,
+            "trans-fat": 0.2,
+            "polyunsaturated-fat": 1,
+            "monounsaturated-fat": 1.8,
+            "carbohydrate": 4.7,
+            "sugars": 1.6,
+            "dietary-fibre": 0,
+            "sodium": 47
+        },
+        "contains": [
+            "canola-oil",
+            "maltodextrin",
+        ]
+    },
+    "simply-better-organic-tofu-plain-firm": {
+        "nutrition-per-100g": {
+            "energy": 615,
+            "protein": 15.9,
+            "fat": 8.8,
+            "saturated-fat": 2.7,
+            "trans-fat": 0.1,
+            "polyunsaturated-fat": 6.9,
+            "monounsaturated-fat": 3.0,
+            "carbohydrate": 0.3,
+            "sugars": 0.3,
+            "sodium": 17
+        }
+    },
+    "arnotts-vita-wheat-rice-crackers-multigrain": {
+        "nutrition-per-100g": {
+            "energy": 1960,
+            "protein": 8.8,
+            "fat": 12.8,
+            "saturated-fat": 1.7,
+            "trans-fat": 0.3,
+            "carbohydrate": 77,
+            "sugars": 0.6,
+            "dietary-fibre": 3
+        }
+    },
+    "sss-hommus-dip": {
+        "nutrition-per-100g": {
+            "energy": 709,
+            "protein": 8.4,
+            "fat": 10.8,
+            "saturated-fat": 1.8,
+            "dietary-fibre": 11,
+            "carbohydrate": 4.6,
+            "sugars": 0.6,
+            "sodium": 378,
+        }
+    }
+}

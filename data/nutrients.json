@@ -1,0 +1,16 @@
+{
+    "energy": {"unit": "kJ"},
+    "protein": {"unit": "g"},
+    "fat": {"unit": "g"},
+    "saturated-fat": {"unit": "g"},
+    "trans-fat": {"unit": "g"},
+    "polyunsaturated-fat": {"unit": "g"},
+    "monounsaturated-fat": {"unit": "g"},
+    "carbohydrate": {"unit": "g"},
+    "sugars": {"unit": "g"},
+    "dietary-fibre": {"unit": "g"},
+    "sodium": {"unit": "mg"},
+    "potassium": {"unit": "mg"},
+    "calcium": {"unit": "mg"},
+    "vitamin-e": {"unit": "mg"},
+}
