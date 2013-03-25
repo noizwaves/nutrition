@@ -83,7 +83,43 @@
             "dietary-fibre": 11,
             "carbohydrate": 4.6,
             "sugars": 0.6,
-            "sodium": 378,
+            "sodium": 378
+        }
+    },
+    "coles-butter-beans-organic": {
+        "nutrition-per-100g": {
+            "energy": 384,
+            "protein": 7.4,
+            "fat": 0.9,
+            "saturated-fat": 0.9,
+            "carbohydrate": 15.2,
+            "sugars": 0.9,
+            "dietary-fibre": 7,
+            "sodium": 300
+        }
+    },
+    "coles-red-kidney-beans-organic": {
+        "nutrition-per-100g": {
+            "energy": 370,
+            "protein": 5.2,
+            "fat": 0.4,
+            "saturated-fat": 0.3,
+            "carbohydrate": 16.1,
+            "sugars": 0.7,
+            "dietary-fibre": 7.3,
+            "sodium": 268
+        }
+    },
+    "coles-chick-peas-organic": {
+        "nutrition-per-100g": {
+            "energy": 391,
+            "protein": 8,
+            "fat": 0.5,
+            "saturated-fat": 0.5,
+            "carbohydrate": 15,
+            "sugars": 1.2,
+            "dietary-fibre": 7,
+            "sodium": 295
         }
     }
 }
