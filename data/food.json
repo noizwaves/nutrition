@@ -121,5 +121,15 @@
             "dietary-fibre": 7,
             "sodium": 295
         }
+    },
+    "fruit-kiwi-fruit-fresh-raw": {
+        "nutrition-per-100g": {
+            "energy": 61,
+            "carbohydrate": 14.66,
+            "sugars": 8.99,
+            "dietary-fibre": 3.0,
+            "fat": 0.52,
+            "protein": 1.14
+        }
     }
 }
