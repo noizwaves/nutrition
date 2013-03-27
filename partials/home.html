@@ -1,14 +1,20 @@
 <h3>Food Items</h3>
 
-<table class="table">
+<table class="table" ng-controller="BasicFoodListCtrl">
     <thead>
         <tr>
-            <th>Codename</th>
+            <th>id</th>
+            <th ng-repeat="nutrient in basicNutrients">
+                {{nutrient}}
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="f in food">
+        <tr ng-repeat="f in food"  ng-controller="FoodItemCtrl">
             <td>{{f.id}}</td>
+            <td ng-repeat="n in basicNutrients">
+                {{getAmount(n)}}
+            </td>
         </tr>
     </tbody>
 </table>
