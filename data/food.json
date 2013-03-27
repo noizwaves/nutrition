@@ -1,5 +1,6 @@
-{
-    "coles-muslie-almond": {
+[
+    {
+        "id": "coles-muslie-almond",
         "nutrition-per-100g": {
             "energy": 1560,
             "protein": 12.3,
@@ -11,7 +12,8 @@
             "sodium": 6
         }
     },
-    "sanitarium-almond-milk": {
+    {
+        "id": "sanitarium-almond-milk",
         "nutrition-per-100ml": {
             "energy": 130,
             "protein": 0.5,
@@ -29,7 +31,8 @@
             "vitamin-e": 0.4
         }
     },
-    "coles-soy-milk-regular": {
+    {
+        "id": "coles-soy-milk-regular",
         "nutrition-per-100ml": {
             "energy": 244,
             "protein": 3.1,
@@ -45,10 +48,11 @@
         },
         "contains": [
             "canola-oil",
-            "maltodextrin",
+            "maltodextrin"
         ]
     },
-    "simply-better-organic-tofu-plain-firm": {
+    {
+        "id": "simply-better-organic-tofu-plain-firm",
         "nutrition-per-100g": {
             "energy": 615,
             "protein": 15.9,
@@ -62,7 +66,8 @@
             "sodium": 17
         }
     },
-    "arnotts-vita-wheat-rice-crackers-multigrain": {
+    {
+        "id": "arnotts-vita-wheat-rice-crackers-multigrain",
         "nutrition-per-100g": {
             "energy": 1960,
             "protein": 8.8,
@@ -74,7 +79,8 @@
             "dietary-fibre": 3
         }
     },
-    "sss-hommus-dip": {
+    {
+        "id": "sss-hommus-dip",
         "nutrition-per-100g": {
             "energy": 709,
             "protein": 8.4,
@@ -86,7 +92,8 @@
             "sodium": 378
         }
     },
-    "coles-butter-beans-organic": {
+    {
+        "id": "coles-butter-beans-organic",
         "nutrition-per-100g": {
             "energy": 384,
             "protein": 7.4,
@@ -98,7 +105,8 @@
             "sodium": 300
         }
     },
-    "coles-red-kidney-beans-organic": {
+    {
+        "id": "coles-red-kidney-beans-organic",
         "nutrition-per-100g": {
             "energy": 370,
             "protein": 5.2,
@@ -110,7 +118,8 @@
             "sodium": 268
         }
     },
-    "coles-chick-peas-organic": {
+    {
+        "id": "coles-chick-peas-organic",
         "nutrition-per-100g": {
             "energy": 391,
             "protein": 8,
@@ -122,7 +131,8 @@
             "sodium": 295
         }
     },
-    "fruit-kiwi-fruit-fresh-raw": {
+    {
+        "id": "fruit-kiwi-fruit-fresh-raw",
         "nutrition-per-100g": {
             "energy": 61,
             "carbohydrate": 14.66,
@@ -132,4 +142,4 @@
             "protein": 1.14
         }
     }
-}
+]
