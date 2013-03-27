@@ -3,11 +3,8 @@
 /* Nutrition App Module */
 
 angular.module('nutrition', ['nutritionControllers']).
-    config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-        $locationProvider.
-            //hashPrefix("!").
-            html5Mode(false);
+    config(['$routeProvider', function($routeProvider) {
         $routeProvider.
-            when('', {templateUrl: './partials/home.html', controller: 'HomeCtrl'}).
-            otherwise({redirectTo: ''});
+            when('/', {templateUrl: './partials/home.html', controller: 'HomeCtrl'}).
+            otherwise({redirectTo: '/'});
     }]);
