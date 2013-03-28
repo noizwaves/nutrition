@@ -8,9 +8,34 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="meal in meals">
+        <tr ng-repeat="meal in meals" ng-controller="MealIngredientList">
             <td><input type="text" placeholder="Name the new meal..." ng-model="meal.name"></td>
-            <td>{{meal.ingredients}} <button class="btn btn-small"><i class="icon-edit"></i> modify</button></td>
+            <td>
+                <div ng-switch on="mode">
+                    <div ng-switch-when="list">
+                        <span ng-repeat="i in meal.ingredients">{{i.food.id}} ({{i.amount}}{{getAmountUnit(i.food)}})<span ng-show="!$last">, </span></span>
+                        <button class="btn btn-small" ng-click="toggle()"><i class="icon-edit"></i> modify</button>
+                    </div>
+                    <div ng-switch-when="edit">
+                        <table>
+                            <tbody>
+                                <tr ng-repeat="ing in ingredients">
+                                    <td>{{ing.food.id}}</td>
+                                    <td>
+                                        <div class="input-append">
+                                            <input type="number" ng-model="ing.amount">
+                                            <span class="add-on">{{getAmountUnit(ing.food)}}</span>
+                                        </div>
+                                    </td>   
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <button class="btn btn-small" ng-click="toggle()"><i class="icon-ok"></i> done</button>
+                    </div>
+                </div>
+            </td>
         </tr>
         <tr colspan=2>
             <td>
