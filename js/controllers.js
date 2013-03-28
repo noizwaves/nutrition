@@ -37,4 +37,16 @@ angular.module('nutritionControllers', ['nutritionServices']).
             });
             return (specific || {}).unit;
         };
+    }]).
+    controller('MealListCtrl', ['$scope', 'Food', function($scope, Food) {
+        $scope.meals = [];
+        $scope.addMeal = function() {
+            $scope.meals.push({
+                name: '',
+                ingredients: []
+            });
+        };
+    }]).
+    controller('MealDetailList', ['$scope', function($scope) {
+
     }]);

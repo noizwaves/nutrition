@@ -1,0 +1,21 @@
+<h3>Meals</h3>
+
+<table ng-controller="MealListCtrl">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Ingredients...</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="meal in meals">
+            <td><input type="text" placeholder="Name the new meal..." ng-model="meal.name"></td>
+            <td>{{meal.ingredients}} <button class="btn btn-small"><i class="icon-edit"></i> modify</button></td>
+        </tr>
+        <tr colspan=2>
+            <td>
+                <button class="btn btn-small btn-primary" ng-click="addMeal()"><i class="icon-plus icon-white"></i> meal</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
