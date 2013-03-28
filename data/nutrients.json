@@ -12,5 +12,5 @@
     {"id": "sodium", "unit": "mg"},
     {"id": "potassium", "unit": "mg"},
     {"id": "calcium", "unit": "mg"},
-    {"id": "vitamin-e", "unit": "mg"},
+    {"id": "vitamin-e", "unit": "mg"}
 ]
