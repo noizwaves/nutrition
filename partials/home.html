@@ -4,16 +4,16 @@
     <thead>
         <tr>
             <th>id</th>
-            <th ng-repeat="nutrient in basicNutrients">
-                {{nutrient}}
+            <th ng-repeat="n in nutrients | filter:isBasic">
+                {{n.id}}
             </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="f in food"  ng-controller="FoodItemCtrl">
+        <tr ng-repeat="f in food" ng-controller="FoodItemCtrl">
             <td>{{f.id}}</td>
-            <td ng-repeat="n in basicNutrients">
-                {{getAmount(n)}}
+            <td ng-repeat="n in nutrients | filter:isBasic">
+                {{getAmount(n)}} {{n.unit}}
             </td>
         </tr>
     </tbody>
