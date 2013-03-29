@@ -1,6 +1,7 @@
 [
     {
         "id": "coles-muslie-almond",
+        "name": "Muesli (Almond)",
         "nutrition-per-100g": {
             "energy": 1560,
             "protein": 12.3,
@@ -14,6 +15,7 @@
     },
     {
         "id": "sanitarium-almond-milk",
+        "name": "Almond Milk",
         "nutrition-per-100ml": {
             "energy": 130,
             "protein": 0.5,
@@ -33,6 +35,7 @@
     },
     {
         "id": "coles-soy-milk-regular",
+        "name": "Soy Milk",
         "nutrition-per-100ml": {
             "energy": 244,
             "protein": 3.1,
@@ -53,6 +56,7 @@
     },
     {
         "id": "simply-better-organic-tofu-plain-firm",
+        "name": "Firm Tofu",
         "nutrition-per-100g": {
             "energy": 615,
             "protein": 15.9,
@@ -68,6 +72,7 @@
     },
     {
         "id": "arnotts-vita-wheat-rice-crackers-multigrain",
+        "name": "Rice Crackers",
         "nutrition-per-100g": {
             "energy": 1960,
             "protein": 8.8,
@@ -81,6 +86,7 @@
     },
     {
         "id": "sss-hummus-dip",
+        "name": "Hummus",
         "nutrition-per-100g": {
             "energy": 709,
             "protein": 8.4,
@@ -94,6 +100,7 @@
     },
     {
         "id": "coles-hummus-lite",
+        "name": "Hummus",
         "nutrition-per-100g": {
             "energy": 696,
             "protein": 5.0,
@@ -106,6 +113,7 @@
     },
     {
         "id": "coles-butter-beans-organic",
+        "name": "Butter Beans",
         "nutrition-per-100g": {
             "energy": 384,
             "protein": 7.4,
@@ -119,6 +127,7 @@
     },
     {
         "id": "coles-red-kidney-beans-organic",
+        "name": "Kidney Beans",
         "nutrition-per-100g": {
             "energy": 370,
             "protein": 5.2,
@@ -132,6 +141,7 @@
     },
     {
         "id": "coles-chick-peas-organic",
+        "name": "Chickpeas",
         "nutrition-per-100g": {
             "energy": 391,
             "protein": 8,
@@ -145,6 +155,7 @@
     },
     {
         "id": "fruit-kiwi-fruit-fresh-raw",
+        "name": "Kiwifruit",
         "nutrition-per-100g": {
             "energy": 61,
             "carbohydrate": 14.66,
@@ -156,6 +167,7 @@
     },
     {
         "id": "coles-almonds-natural",
+        "name": "Almonds",
         "nutrition-per-100g": {
             "energy": 2575,
             "protein": 24.1,
@@ -173,6 +185,7 @@
     },
     {
         "id": "coles-walnuts-natural-californian",
+        "name": "Walnuts",
         "nutrition-per-100g": {
             "energy": 2938,
             "protein": 15.9,

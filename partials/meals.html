@@ -13,7 +13,7 @@
             <td>
                 <div ng-switch on="mode">
                     <div ng-switch-when="list">
-                        <span ng-repeat="i in meal.ingredients">{{i.food.id}} ({{i.amount}}{{getAmountUnit(i.food)}})<span ng-show="!$last">, </span></span>
+                        <span ng-repeat="i in meal.ingredients">{{i.food.name}} [{{i.amount}}{{getAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
                         <button class="btn btn-small" ng-click="toggle()"><i class="icon-edit"></i> modify</button>
                     </div>
                     <div ng-switch-when="edit">
