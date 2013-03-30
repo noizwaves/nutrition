@@ -93,4 +93,37 @@ angular.module('nutritionControllers', ['nutritionServices']).
         $scope.getAmountUnit = function(food) {
             return ('nutrition-per-100g' in food) ? 'g' : 'ml';
         };
+    }]).
+    controller('IngredientsSummaryCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
+        $scope.summaryNutrientIds = ['energy', 'protein', 'fat', 'carbohydrate'];
+        $scope.summaryPrecisions = {
+            'energy': 0,
+            'protein': 1,
+            'fat': 1,
+            'carbohydrate': 1
+        };
+
+        $scope.nutrients = Nutrient.query();
+
+        $scope.getAmount = function(id) {
+            var total = 0;
+            angular.forEach($scope.ingredients, function(i) {
+                if (i.amount) {
+                    var nutrition = i.food['nutrition-per-100g'] || i.food['nutrition-per-100ml'];
+                    total += (nutrition[id] || 0) * (i.amount / 100);
+                }
+            });
+            return total;
+        };
+
+        $scope.getAmountUnit = function(id) {
+            var specific = null;
+            angular.forEach($scope.nutrients, function(n) {
+                if (angular.equals(n.id, id)) {
+                    specific = n;
+                }
+            });
+
+            return (specific || {}).unit;
+        };
     }]);
