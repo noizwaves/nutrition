@@ -205,6 +205,11 @@ angular.module('nutritionControllers', ['nutritionServices']).
             return (nutrient || {}).precision || 0;
         };
 
+        $scope.getName = function(id) {
+            var nutrient = $scope.getNutrient(id);
+            return (nutrient || {}).name || id;
+        };
+
         $scope.food = Food.query();
 
         $scope.getFood = function(id) {
