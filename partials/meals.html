@@ -42,7 +42,7 @@
                 </td>
                 <td ng-controller="IngredientsSummaryCtrl">
                     <span ng-repeat="n in summaryNutrientIds">
-                        {{n}}: {{getAmount(n) | number:(summaryPrecisions[n])}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
+                        {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
                     </span>
                 </td>
             </tr>
@@ -59,7 +59,7 @@
     <div ng-controller="MealListNutritionCtrl">
         <div class="row-fluid" ng-repeat="idTuple in totalNutrientIdsGrouped">
             <span class="span3" ng-repeat="n in idTuple">
-                {{n}}: {{getTotal(n) | number:(summaryPrecisions[n])}}{{getAmountUnit(n)}}
+                {{n}}: {{getTotal(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}
             </span>
         </div>
     </div>

@@ -1,14 +1,20 @@
 [
     {
         "id": "energy",
+        "symbol": "E",
+        "precision": 0,
         "unit": "kJ"
     },
     {
         "id": "protein",
+        "symbol": "P",
+        "precision": 1,
         "unit": "g"
     },
     {
         "id": "fat",
+        "symbol": "F",
+        "precision": 1,
         "unit": "g"
     },
     {
@@ -29,6 +35,8 @@
     },
     {
         "id": "carbohydrate",
+        "symbol": "C",
+        "precision": 1,
         "unit": "g"
     },
     {

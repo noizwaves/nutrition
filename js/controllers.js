@@ -138,14 +138,28 @@ angular.module('nutritionControllers', ['nutritionServices']).
     }]).
     controller('IngredientsSummaryCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
         $scope.summaryNutrientIds = ['energy', 'protein', 'fat', 'carbohydrate'];
-        $scope.summaryPrecisions = {
-            'energy': 0,
-            'protein': 1,
-            'fat': 1,
-            'carbohydrate': 1
-        };
 
         $scope.nutrients = Nutrient.query();
+
+        $scope.getNutrient = function(id) {
+            var nutrient = null;
+            angular.forEach($scope.nutrients, function(n) {
+                if (angular.equals(id, n.id)) {
+                    nutrient = n;
+                }
+            });
+            return nutrient;
+        };
+
+        $scope.getPrecision = function(id) {
+            var nutrient = $scope.getNutrient(id);
+            return (nutrient || {}).precision || 0;
+        };
+
+        $scope.getSymbol = function(id) {
+            var nutrient = $scope.getNutrient(id);
+            return (nutrient || {}).symbol || id;
+        };
 
         $scope.getAmount = function(id) {
             var total = 0;
@@ -173,14 +187,23 @@ angular.module('nutritionControllers', ['nutritionServices']).
         // TODO: now this feels even more copy and pasty...!
         $scope.totalNutrientIds = ['energy', 'protein', 'fat', 'carbohydrate'];
         $scope.totalNutrientIdsGrouped = ($filter('ngroup'))($scope.totalNutrientIds, 4);
-        $scope.summaryPrecisions = {
-            'energy': 0,
-            'protein': 1,
-            'fat': 1,
-            'carbohydrate': 1
-        };
 
         $scope.nutrients = Nutrient.query();
+
+        $scope.getNutrient = function(id) {
+            var nutrient = null;
+            angular.forEach($scope.nutrients, function(n) {
+                if (angular.equals(id, n.id)) {
+                    nutrient = n;
+                }
+            });
+            return nutrient;
+        };
+
+        $scope.getPrecision = function(id) {
+            var nutrient = $scope.getNutrient(id);
+            return (nutrient || {}).precision || 0;
+        };
 
         $scope.food = Food.query();
 
