@@ -38,13 +38,22 @@ angular.module('nutritionControllers', ['nutritionServices']).
             return (specific || {}).unit;
         };
     }]).
-    controller('MealListCtrl', ['$scope', 'Food', function($scope, Food) {
-        $scope.meals = [];
+    controller('MealListCtrl', ['$scope', 'Food', 'localStorageService', function($scope, Food, localStorageService) {
+        $scope.meals = localStorageService.parseJson(localStorageService.get('meals') || "{\"meals\": []}").meals;
+
         $scope.addMeal = function() {
             $scope.meals.push({
                 name: '',
                 ingredients: []
             });
+
+            $scope.storeMeals();
+        };
+
+        $scope.storeMeals = function() {
+            var data = {meals: $scope.meals};
+            // TODO: remove Food Resources from meal objects, as these break stringifying rules
+            //localStorageService.add('meals', localStorageService.stringifyJson(data));
         };
     }]).
     controller('MealIngredientList', ['$scope', 'Food', function($scope, Food) {
@@ -69,6 +78,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
                         $scope.meal.ingredients.push(ing);
                     }
                 });
+                $scope.storeMeals();
             } else {
                 angular.forEach($scope.ingredients, function(i) {
                     var inMeal = false;
