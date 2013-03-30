@@ -13,7 +13,7 @@
         <tr ng-repeat="f in food" ng-controller="FoodItemCtrl">
             <td>{{f.name}}</td>
             <td ng-repeat="n in nutrients | filter:isBasic">
-                {{getAmount(n)}} {{n.unit}}
+                {{getAmount(n) | number:getPrecision(n)}} {{n.unit}}
             </td>
         </tr>
     </tbody>

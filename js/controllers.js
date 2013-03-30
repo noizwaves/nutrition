@@ -24,18 +24,16 @@ angular.module('nutritionControllers', ['nutritionServices']).
         var food = $scope.f;
         var nutrients = food['nutrition-per-100g'] || food['nutrition-per-100ml'] || {};
 
-        $scope.getAmount = function(nutrient) {
-            return nutrients[nutrient.id] || '-';
+        $scope.getPrecision = function(nutrient) {
+            return nutrient.precision || 0;
         };
 
         $scope.getUnit = function(nutrient) {
-            var specific = null;
-            angular.forEach(Nutrient.query(), function(d) {
-                if (d.id == nutrient) {
-                    specific = d;
-                }
-            });
-            return (specific || {}).unit;
+            return nutrient.unit || '';
+        };
+
+        $scope.getAmount = function(nutrient) {
+            return nutrients[nutrient.id] || '-';
         };
     }]).
     controller('MealListCtrl', ['$scope', 'Food', 'localStorageService', function($scope, Food, localStorageService) {
