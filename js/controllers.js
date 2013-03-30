@@ -53,16 +53,25 @@ angular.module('nutritionControllers', ['nutritionServices']).
         $scope.storeMeals = function() {
             var data = {meals: $scope.meals};
             // TODO: remove Food Resources from meal objects, as these break stringifying rules
-            //localStorageService.add('meals', localStorageService.stringifyJson(data));
+            localStorageService.add('meals', localStorageService.stringifyJson(data));
         };
     }]).
     controller('MealIngredientList', ['$scope', 'Food', function($scope, Food) {
         $scope.mode = 'list';
-        Food.query(function(foods) {
+        $scope.food = Food.query(function(foods) {
             $scope.ingredients = [];
             angular.forEach(foods, function(food) {
+                // Initial ingredients sync from meal
+                var amount = undefined;
+                angular.forEach($scope.meal.ingredients, function(i) {
+                    if (angular.equals(i.food, food.id)) {
+                        amount = i.amount;
+                    }
+                });
+
                 $scope.ingredients.push({
-                    food: food
+                    food: food,
+                    amount: amount
                 });
             });
         });
@@ -75,7 +84,10 @@ angular.module('nutritionControllers', ['nutritionServices']).
                 $scope.meal.ingredients = [];
                 angular.forEach($scope.ingredients, function(ing) {
                     if (angular.isNumber(ing.amount)) {
-                        $scope.meal.ingredients.push(ing);
+                        $scope.meal.ingredients.push({
+                            food: ing.food.id,
+                            amount: ing.amount
+                        });
                     }
                 });
                 $scope.storeMeals();
@@ -84,7 +96,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
                     var inMeal = false;
                     var amount;
                     angular.forEach($scope.meal.ingredients, function(i2) {
-                        if (angular.equals(i, i2)) {
+                        if (angular.equals(i.id, i2.food)) {
                             amount = i2.amount;
                             inMeal = true;
                         }
@@ -100,8 +112,28 @@ angular.module('nutritionControllers', ['nutritionServices']).
             $scope.mode  = nextMode;
         };
 
-        $scope.getAmountUnit = function(food) {
+        $scope.getFood = function(id) {
+            var food = null;
+            angular.forEach($scope.food, function(f) {
+                if (angular.equals(f.id, id)) {
+                    food = f;
+                }
+            });
+            return food;
+        };
+
+        $scope.getFoodAmountUnit = function(id) {
+            var food = $scope.getFood(id);
+            if (!food) return;
+
             return ('nutrition-per-100g' in food) ? 'g' : 'ml';
+        };
+
+        $scope.getFoodName = function(id) {
+            var food = $scope.getFood(id);
+            if (!food) return;
+
+            return food.name;
         };
     }]).
     controller('IngredientsSummaryCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
@@ -137,7 +169,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
             return (specific || {}).unit;
         };
     }]).
-    controller('MealListNutritionCtrl', ['$scope', '$filter', 'Nutrient', function($scope, $filter, Nutrient) {
+    controller('MealListNutritionCtrl', ['$scope', '$filter', 'Nutrient', 'Food', function($scope, $filter, Nutrient, Food) {
         // TODO: now this feels even more copy and pasty...!
         $scope.totalNutrientIds = ['energy', 'protein', 'fat', 'carbohydrate'];
         $scope.totalNutrientIdsGrouped = ($filter('ngroup'))($scope.totalNutrientIds, 4);
@@ -150,12 +182,26 @@ angular.module('nutritionControllers', ['nutritionServices']).
 
         $scope.nutrients = Nutrient.query();
 
+        $scope.food = Food.query();
+
+        $scope.getFood = function(id) {
+            var food = null;
+            angular.forEach($scope.food, function(f) {
+                if (angular.equals(f.id, id)) {
+                    food = f;
+                }
+            });
+            return food;
+        };
+
         $scope.getTotal = function(id) {
             var total = 0;
             angular.forEach($scope.meals, function(m) {
                 angular.forEach(m.ingredients, function(i) {
                     if (i.amount) {
-                        var nutrition = i.food['nutrition-per-100g'] || i.food['nutrition-per-100ml'];
+                        var food = $scope.getFood(i.food);
+                        if (food === null) return;
+                        var nutrition = food['nutrition-per-100g'] || food['nutrition-per-100ml'];
                         total += (nutrition[id] || 0) * (i.amount / 100);
                     }
                 });

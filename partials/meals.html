@@ -16,7 +16,8 @@
                     <div ng-switch on="mode">
                         <div ng-switch-when="list">
                             <button class="btn btn-link" ng-click="toggle()">
-                                <span ng-repeat="i in meal.ingredients">{{i.food.name}} [{{i.amount}}{{getAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
+                                <!-- i.food is now an ID and i.amount is the same -->
+                                <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}} [{{i.amount}}{{getFoodAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
                                 <span ng-show="meal.ingredients.length == 0"><i class="icon-plus"></i> Add ingredients</span>
                             </button>
                         </div>
@@ -28,7 +29,7 @@
                                         <td>
                                             <div class="input-append">
                                                 <input type="number" ng-model="ing.amount">
-                                                <span class="add-on">{{getAmountUnit(ing.food)}}</span>
+                                                <span class="add-on">{{getFoodAmountUnit(ing.food.id)}}</span>
                                             </div>
                                         </td>
                                     </tr>
