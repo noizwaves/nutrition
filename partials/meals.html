@@ -59,7 +59,7 @@
     <div ng-controller="MealListNutritionCtrl">
         <div class="row-fluid" ng-repeat="idTuple in totalNutrientIdsGrouped">
             <span class="span3" ng-repeat="n in idTuple">
-                {{n}}: {{getTotal(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}
+                {{getName(n)}}: {{getTotal(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}
             </span>
         </div>
     </div>

@@ -14,6 +14,21 @@
         }
     },
     {
+        "id": "coles-rolled-oats-wholegrain",
+        "name": "Wholegrain Rolled Oats",
+        "nutrition-per-100g": {
+            "energy": 1680,
+            "protein": 13.3,
+            "fat": 9.8,
+            "saturated-fat": 1.7,
+            "carbohydrate": 60.3,
+            "sugars": 1.2,
+            "dietary-fibre": 0.0086,
+            "sodium": 7,
+            "potassium": 313
+        }
+    },
+    {
         "id": "sanitarium-almond-milk",
         "name": "Almond Milk",
         "nutrition-per-100ml": {
@@ -154,6 +169,20 @@
         }
     },
     {
+        "id": "coles-lentils",
+        "name": "Lentils",
+        "nutrition-per-100g": {
+            "energy": 290,
+            "protein": 4.2,
+            "fat": 0.9,
+            "saturated-fat": 0.1,
+            "carbohydrate": 11.3,
+            "sugars": 0.9,
+            "dietary-fibre": 2.8,
+            "sodium": 293
+        }
+    },
+    {
         "id": "fruit-kiwi-fruit-fresh-raw",
         "name": "Kiwifruit",
         "nutrition-per-100g": {
@@ -163,6 +192,20 @@
             "dietary-fibre": 3.0,
             "fat": 0.52,
             "protein": 1.14
+        }
+    },
+    {
+        "id": "coles-dried-apricots",
+        "name": "Dried Apricots",
+        "nutrition-per-100g": {
+            "energy": 1130,
+            "protein": 2.8,
+            "fat": 1.0,
+            "saturated-fat": 0.2,
+            "carbohydrate": 58.2,
+            "sugars": 45,
+            "dietary-fibre": 7.5,
+            "sodium": 0.35
         }
     },
     {
@@ -198,6 +241,65 @@
             "sugars": 2.6,
             "sodium": 0.8,
             "magnesium": 180
+        }
+    },
+    {
+        "id": "coles-cashews-salted",
+        "name": "Cashews",
+        "nutrition-per-100g": {
+            "energy": 2530,
+            "protein": 19.6,
+            "fat": 48.8,
+            "saturated-fat": 9,
+            "carbohydrate": 20,
+            "sugars": 6.7,
+            "sodium": 300
+        }
+    },
+    {
+        "id": "coles-flaxseed",
+        "name": "Flaxseed",
+        "nutrition-per-100g": {
+            "energy": 1900,
+            "protein": 18,
+            "fat": 34,
+            "saturated-fat": 3.2,
+            "omega-3-fatty-acid": 20.2,
+            "carbohydrate": 20,
+            "sugars": 2.0,
+            "dietary-fibre": 27.3,
+            "sodium": 66
+        }
+    },
+    {
+        "id": "mission-wraps-wholegrain",
+        "name": "Wholegrain Wraps",
+        "nutrition-per-100g": {
+            "energy": 1330,
+            "protein": 8.5,
+            "fat": 9.4,
+            "saturated-fat": 4.5,
+            "trans-fat": 0.1,
+            "polyunsaturated-fat": 1.4,
+            "monounsaturated-fat": 3.5,
+            "carbohydrate": 46.9,
+            "sugars": 5.2,
+            "dietary-fibre": 4.6,
+            "sodium": 960
+        }
+    },
+    {
+        "id": "sanremo-wholegrain-pasta",
+        "name": "Wholegrain Pasta",
+        "nutrition-per-100g": {
+            "energy": 1390,
+            "protein": 13,
+            "fat": 2.5,
+            "saturated-fat": 1.2,
+            "carbohydrate": 57,
+            "sugars": 1.8,
+            "dietary-fibre": 13,
+            "sodium": 30
         }
     }
 ]

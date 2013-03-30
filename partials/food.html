@@ -1,11 +1,11 @@
 <h3>Food Items</h3>
 
-<table class="table" ng-controller="BasicFoodListCtrl">
+<table class="table table-striped" ng-controller="BasicFoodListCtrl">
     <thead>
         <tr>
-            <th>id</th>
+            <th></th>
             <th ng-repeat="n in nutrients | filter:isBasic">
-                {{n.id}}
+                {{n.name || n.id}}
             </th>
         </tr>
     </thead>

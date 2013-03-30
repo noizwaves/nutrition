@@ -34,6 +34,10 @@
         "unit": "g"
     },
     {
+        "id": "omega-3-fatty-acid",
+        "unit": "g"
+    },
+    {
         "id": "carbohydrate",
         "symbol": "C",
         "precision": 1,
