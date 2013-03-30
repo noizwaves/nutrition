@@ -126,4 +126,41 @@ angular.module('nutritionControllers', ['nutritionServices']).
 
             return (specific || {}).unit;
         };
+    }]).
+    controller('MealListNutritionCtrl', ['$scope', '$filter', 'Nutrient', function($scope, $filter, Nutrient) {
+        // TODO: now this feels even more copy and pasty...!
+        $scope.totalNutrientIds = ['energy', 'protein', 'fat', 'carbohydrate'];
+        $scope.totalNutrientIdsGrouped = ($filter('ngroup'))($scope.totalNutrientIds, 4);
+        $scope.summaryPrecisions = {
+            'energy': 0,
+            'protein': 1,
+            'fat': 1,
+            'carbohydrate': 1
+        };
+
+        $scope.nutrients = Nutrient.query();
+
+        $scope.getTotal = function(id) {
+            var total = 0;
+            angular.forEach($scope.meals, function(m) {
+                angular.forEach(m.ingredients, function(i) {
+                    if (i.amount) {
+                        var nutrition = i.food['nutrition-per-100g'] || i.food['nutrition-per-100ml'];
+                        total += (nutrition[id] || 0) * (i.amount / 100);
+                    }
+                });
+            });
+            return total;
+        };
+
+        $scope.getAmountUnit = function(id) {
+            var specific = null;
+            angular.forEach($scope.nutrients, function(n) {
+                if (angular.equals(n.id, id)) {
+                    specific = n;
+                }
+            });
+
+            return (specific || {}).unit;
+        };
     }]);
