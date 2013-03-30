@@ -127,6 +127,19 @@
         }
     },
     {
+        "id": "coles-hummus",
+        "name": "Hummus (Lite)",
+        "nutrition-per-100g": {
+            "energy": 1091,
+            "protein": 5.6,
+            "fat": 19.2,
+            "saturated-fat": 2,
+            "carbohydrate": 16.8,
+            "sugars": 0.6,
+            "sodium": 347
+        }
+    },
+    {
         "id": "coles-butter-beans-organic",
         "name": "Butter Beans",
         "nutrition-per-100g": {
