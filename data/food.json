@@ -196,7 +196,21 @@
         }
     },
     {
-        "id": "fruit-kiwi-fruit-fresh-raw",
+        "id": "edgell-cannellini-beans",
+        "name": "Cannellini Beans",
+        "nutrition-per-100g": {
+            "energy": 438,
+            "protein": 7.4,
+            "fat": 0.8,
+            "saturated-fat": 0.1,
+            "carbohydrate": 14,
+            "sugars": 1,
+            "dietary-fibre": 5.6,
+            "sodium": 298
+        }
+    },
+    {
+        "id": "fruit-kiwifruit-fresh-raw",
         "name": "Kiwifruit",
         "nutrition-per-100g": {
             "energy": 61,
@@ -206,6 +220,58 @@
             "fat": 0.52,
             "protein": 1.14
         }
+    },
+    {
+        "id": "fruit-apple-granny-smith-fresh-raw",
+        "name": "Apple (Granny Smith)"
+    },
+    {
+        "id": "fruit-apple-pink-lady-fresh-raw",
+        "name": "Apple (Pink Lady)"
+    },
+    {
+        "id": "fruit-banana-fresh-raw",
+        "name": "Banana"
+    },
+    {
+        "id": "fruit-orange-naval-fresh-raw",
+        "name": "Naval Orange"
+    },
+    {
+        "id": "veg-broccoli-fresh",
+        "name": "Broccoli"
+    },
+    {
+        "id": "veg-spinach-fresh",
+        "name": "Spinach"
+    },
+    {
+        "id": "veg-baby-spinach-leaves-fresh",
+        "name": "Baby Spinach"
+    },
+    {
+        "id": "veg-bok-choy-fresh",
+        "name": "Bok Choy"
+    },
+    {
+        "id": "veg-sweet-potato-fresh",
+        "name": "Sweet Potato"
+    },
+    {
+        "id": "veg-eggplant-fresh",
+        "name": "Eggplant"
+    },
+    {
+        "id": "veg-mushrooms-cup-fresh",
+        "name": "Cup Mushrooms"
+    },
+    {
+        "id": "veg-cucumber-continental-fresh",
+        "name": "Cucumber"
+    },
+    {
+        "id": "veg-capcicum-red-fresh",
+        "name": "Red Capcicum"
     },
     {
         "id": "coles-dried-apricots",
