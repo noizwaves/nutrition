@@ -94,7 +94,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
                     var inMeal = false;
                     var amount;
                     angular.forEach($scope.meal.ingredients, function(i2) {
-                        if (angular.equals(i.id, i2.food)) {
+                        if (angular.equals(i.food.id, i2.food)) {
                             amount = i2.amount;
                             inMeal = true;
                         }
