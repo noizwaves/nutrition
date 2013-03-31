@@ -5,6 +5,14 @@ body {
     padding-bottom: 40px;
 }
 
+a {
+    cursor: pointer;
+}
+
+.pull-middle {
+    text-align: center;
+}
+
 /* Meals */
 
 .meal-holder {
