@@ -115,7 +115,7 @@
     },
     {
         "id": "coles-hummus-lite",
-        "name": "Hummus",
+        "name": "Hummus (Lite)",
         "nutrition-per-100g": {
             "energy": 696,
             "protein": 5.0,
@@ -128,7 +128,7 @@
     },
     {
         "id": "coles-hummus",
-        "name": "Hummus (Lite)",
+        "name": "Hummus",
         "nutrition-per-100g": {
             "energy": 1091,
             "protein": 5.6,
