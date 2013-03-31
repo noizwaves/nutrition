@@ -84,40 +84,48 @@ angular.module('nutritionControllers', ['nutritionServices']).
             });
         });
 
-        $scope.toggle = function() {
-            var nextMode = angular.equals($scope.mode, 'list') ? 'edit' : 'list';
+        $scope.gotoList = function() {
+            $scope.mode = 'list';
+        };
 
-            // TODO: do this more elegantly
-            if (angular.equals(nextMode, 'list')) {
-                $scope.meal.ingredients = [];
-                angular.forEach($scope.ingredients, function(ing) {
-                    if (angular.isNumber(ing.amount)) {
-                        $scope.meal.ingredients.push({
-                            food: ing.food.id,
-                            amount: ing.amount
-                        });
-                    }
-                });
-                $scope.storeMeals();
-            } else {
-                angular.forEach($scope.ingredients, function(i) {
-                    var inMeal = false;
-                    var amount;
-                    angular.forEach($scope.meal.ingredients, function(i2) {
-                        if (angular.equals(i.food.id, i2.food)) {
-                            amount = i2.amount;
-                            inMeal = true;
-                        }
+        $scope.gotoDetailFromList = function() {
+            $scope.mode = 'detail';
+        };
+
+        $scope.gotoDetailFromEdit = function() {
+            $scope.mode = 'detail';
+
+            $scope.meal.ingredients = [];
+            angular.forEach($scope.ingredients, function(ing) {
+                if (angular.isNumber(ing.amount)) {
+                    $scope.meal.ingredients.push({
+                        food: ing.food.id,
+                        amount: ing.amount
                     });
-                    if (inMeal) {
-                        i.amount = amount;
-                    } else {
-                        delete i.amount;
+                }
+            });
+
+            $scope.storeMeals();
+        };
+
+        $scope.gotoEdit = function() {
+            $scope.mode = 'edit';
+
+            angular.forEach($scope.ingredients, function(i) {
+                var inMeal = false;
+                var amount;
+                angular.forEach($scope.meal.ingredients, function(i2) {
+                    if (angular.equals(i.food.id, i2.food)) {
+                        amount = i2.amount;
+                        inMeal = true;
                     }
                 });
-            }
-
-            $scope.mode  = nextMode;
+                if (inMeal) {
+                    i.amount = amount;
+                } else {
+                    delete i.amount;
+                }
+            });
         };
 
         $scope.getFood = function(id) {

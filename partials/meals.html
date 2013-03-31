@@ -3,12 +3,12 @@
     <div class="meal-holder">
         <div class="meal-row" ng-repeat="meal in meals" ng-controller="MealIngredientListCtrl">
             <ng-switch on="mode">
-                <div class="row-fluid row-clickable" ng-switch-when="list" ng-click="toggle()">
+                <div class="row-fluid row-clickable" ng-switch-when="list" ng-click="gotoDetailFromList()">
                     <div class="span2">
                         <span>{{meal.name || 'new meal'}}</span>
                     </div>
                     <div class="span6">
-                        <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}} [{{i.amount}}{{getFoodAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
+                        <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}}<span ng-show="!$last">, </span></span>
                         <span ng-show="meal.ingredients.length == 0">no ingredients</span>
                     </div>
                     <div class="span4" ng-controller="IngredientsSummaryCtrl">
@@ -17,10 +17,35 @@
                         </span>
                     </div>
                 </div>
+                <div ng-switch-when="detail">
+                    <div class="row-fluid row-clickable" ng-click="gotoList()">
+                        <div class="span12 pull-middle">
+                            <h4 style="display: inline-block;">{{meal.name || 'new meal'}}</h4>
+                            <!-- TODO: show these buttons betterer, consider floating to right and making smaller -->
+                            <button class="btn btn-link" ng-click="gotoEdit()">Edit</button>
+                            <button class="btn btn-link" ng-click="removeMeal(meal)">Remove</button>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Ingredient</th>
+                                    <th>Amount</th>
+                                </thead>
+                                <tr ng-repeat="i in meal.ingredients">
+                                    <td>{{getFoodName(i.food)}}</td>
+                                    <td>{{i.amount}}{{getFoodAmountUnit(i.food)}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="span6"></div>
+                    </div>
+                </div>
                 <div ng-switch-when="edit">
                     <div class="row-fluid">
                         <div class="span12 pull-middle">
-                            <button class="btn btn-small btn-success" ng-click="toggle()"><i class="icon-ok icon-white"></i> done</button>
+                            <button class="btn btn-small btn-success" ng-click="gotoDetailFromEdit()"><i class="icon-ok icon-white"></i> done</button>
                             <button class="btn btn-small btn-danger" ng-click="removeMeal(meal)"><i class="icon-trash icon-white"></i> delete</button>
                         </div>
                     </div>
@@ -51,14 +76,14 @@
                     </div>
                     <div class="row-fluid">
                         <div class="span12 pull-middle">
-                            <button class="btn btn-small btn-success" ng-click="toggle()"><i class="icon-ok icon-white"></i> done</button>
+                            <button class="btn btn-small btn-success" ng-click="gotoDetailFromEdit()"><i class="icon-ok icon-white"></i> done</button>
                         </div>
                     </div>
                 </div>
             </ng-switch>
         </div>
         <div class="meal-row">
-            <div class="row-fluid">
+            <div class="row-fluid" >
                 <div class="span12 pull-middle">
                     <button class="btn btn-small" ng-click="addMeal()"><i class="icon-plus"></i> Add a new meal</button>
                 </div>
