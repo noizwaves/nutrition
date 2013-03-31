@@ -52,12 +52,22 @@
         "unit": "g"
     },
     {
+        "id": "starch",
+        "unit": "g"
+    },
+    {
         "id": "dietary-fibre",
         "unit": "g"
     },
     {
         "id": "sodium",
         "unit": "mg"
+    },
+    {
+        "id": "iron",
+        "unit": "mg",
+        "name": "Iron",
+        "symbol": "Fe"
     },
     {
         "id": "potassium",
@@ -68,8 +78,75 @@
         "unit": "mg"
     },
     {
+        "id": "phosphorus",
+        "unit": "mg",
+        "name": "Phosphorus",
+        "symbol": "Ph"
+    },
+    {
+        "id": "zinc",
+        "unit": "mg",
+        "name": "Zinc",
+        "symbol": "Zn"
+    },
+    {
+        "id": "manganese",
+        "unit": "mg",
+        "name": "Manganese",
+        "symbol": "Mn"
+    },
+    {
+        "id": "vitamin-a",
+        "unit": "μg",
+        "name": "Vitamin A",
+        "symbol": "VA"
+    },
+    {
+        "id": "vitamin-b1",
+        "unit": "mg",
+        "name": "Vitamin B1 (Thiamine)",
+        "symbol": "B1"
+    },
+    {
+        "id": "vitamin-b2",
+        "unit": "mg",
+        "name": "Vitamin B2 (Riboflavin)",
+        "symbol": "B2"
+    },
+    {
+        "id": "vitamin-b3",
+        "unit": "mg",
+        "name": "Vitamin B3 (Niacin)",
+        "symbol": "B3"
+    },
+    {
+        "id": "vitamin-b5",
+        "unit": "mg",
+        "name": "Vitamin B5 (Pantothenic acid)",
+        "symbol": "B5"
+    },
+    {
+        "id": "vitamin-b6",
+        "unit": "mg",
+        "name": "Vitamin B6",
+        "symbol": "B6"
+    },
+    {
+        "id": "vitamin-b9",
+        "unit": "mg",
+        "name": "Vitamin B9 (Folate)",
+        "symbol": "B9"
+    },
+
+    {
         "id": "vitamin-e",
         "unit": "mg"
+    },
+    {
+        "id": "vitamin-k",
+        "unit": "μg",
+        "name": "Vitamin K",
+        "symbol": "VK"
     },
     {
         "id": "magnesium",

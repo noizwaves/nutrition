@@ -223,27 +223,111 @@
     },
     {
         "id": "fruit-apple-granny-smith-fresh-raw",
-        "name": "Apple (Granny Smith)"
+        "name": "Apple (Granny Smith)",
+        "nutrition-per-100g": {
+            "energy": 218,
+            "carbohydrate": 13.81,
+            "sugars": 10.39,
+            "dietary-fibre": 2.4,
+            "fat": 0.17,
+            "protein": 0.26,
+            "vitamin-b1": 0.017,
+            "vitamin-b2": 0.026,
+            "vitamin-b3": 0.091,
+            "vitamin-b5": 0.061,
+            "vitamin-b6": 0.041,
+            "vitamin-b9": 0.003,
+            "vitamin-c": 4.6,
+            "calcium": 6,
+            "iron": 0.12,
+            "magnesium": 5,
+            "phosphorus": 11,
+            "potassium": 107,
+            "zinc": 0.04
+        }
     },
     {
         "id": "fruit-apple-pink-lady-fresh-raw",
-        "name": "Apple (Pink Lady)"
+        "name": "Apple (Pink Lady)",
+        "nutrition-per-100g": {
+            "energy": 218,
+            "carbohydrate": 13.81,
+            "sugars": 10.39,
+            "dietary-fibre": 2.4,
+            "fat": 0.17,
+            "protein": 0.26
+        }
     },
     {
         "id": "fruit-banana-fresh-raw",
-        "name": "Banana"
+        "name": "Banana",
+        "nutrition-per-100g": {
+            "energy": 371,
+            "carbohydrate": 22.84,
+            "sugars": 12.23,
+            "dietary-fibre": 2.6,
+            "fat": 0.33,
+            "protein": 1.09,
+            "vitamin-b6": 0.4,
+            "vitamin-c": 8.7,
+            "manganese": 0.3
+        }
     },
     {
-        "id": "fruit-orange-naval-fresh-raw",
-        "name": "Naval Orange"
+        "id": "fruit-orange-navel-fresh-raw",
+        "name": "Navel Orange",
+        "nutrition-per-100g": {
+            "energy": 192,
+            "carbohydrate": 11.75,
+            "sugars": 9.35,
+            "dietary-fibre": 2.4,
+            "fat": 0.12,
+            "protein": 0.94,
+            "vitamin-c": 53.2
+        }
     },
     {
         "id": "veg-broccoli-fresh",
-        "name": "Broccoli"
+        "name": "Broccoli",
+        "nutrition-per-100g": {
+            "energy": 141,
+            "carbohydrate": 6.64,
+            "sugars": 1.7,
+            "dietary-fibre": 2.6,
+            "fat": 0.37,
+            "protein": 2.82,
+            "vitamin-b1": 0.071,
+            "vitamin-b5": 0.573,
+            "vitamin-b6": 0.175,
+            "vitamin-b9": 0.063,
+            "vitamin-c": 89.2,
+            "vitamin-k": 101.6,
+            "manganese": 0.21
+        }
     },
     {
         "id": "veg-spinach-fresh",
-        "name": "Spinach"
+        "name": "Spinach",
+        "nutrition-per-100g": {
+            "energy": 97,
+            "carbohydrate": 3.6,
+            "sugars": 0.4,
+            "dietary-fibre": 2.2,
+            "fat": 0.4,
+            "protein": 2.9,
+            "vitamin-a": 469,
+            "vitamin-b2": 0.189,
+            "vitamin-b6": 0.195,
+            "vitamin-b9": 0.194,
+            "vitamin-c": 28,
+            "vitamin-e": 2,
+            "vitamin-k": 483,
+            "calcium": 99,
+            "iron": 2.7,
+            "magnesium": 79,
+            "manganese": 0.897,
+            "potassium": 558
+        }
     },
     {
         "id": "veg-baby-spinach-leaves-fresh",
@@ -251,27 +335,90 @@
     },
     {
         "id": "veg-bok-choy-fresh",
-        "name": "Bok Choy"
+        "name": "Bok Choy",
+        "nutrition-per-100g": {
+            "energy": 54,
+            "carbohydrate": 2.2,
+            "dietary-fibre": 1,
+            "fat": 0.2,
+            "protein": 1.5,
+            "vitamin-a": 243,
+            "vitamin-c": 45,
+            "calcium": 105
+        }
     },
     {
         "id": "veg-sweet-potato-fresh",
-        "name": "Sweet Potato"
+        "name": "Sweet Potato",
+        "nutrition-per-100g": {
+            "energy": 359,
+            "carbohydrate": 20.1,
+            "sugars": 4.2,
+            "starch": 12.7,
+            "dietary-fibre": 3,
+            "fat": 0.1,
+            "protein": 1.6,
+            "vitamin-a": 709,
+            "vitamin-b5": 0.8,
+            "vitamin-b6": 0.209,
+            "manganese": 0.258
+        }
     },
     {
         "id": "veg-eggplant-fresh",
-        "name": "Eggplant"
+        "name": "Eggplant",
+        "nutrition-per-100g": {
+            "energy": 104,
+            "carbohydrate": 5.88,
+            "sugars": 3.53,
+            "dietary-fibre": 3,
+            "fat": 0.18,
+            "protein": 0.98,
+            "manganese": 0.232
+        }
     },
     {
         "id": "veg-mushrooms-cup-fresh",
-        "name": "Cup Mushrooms"
+        "name": "Cup Mushrooms",
+        "nutrition-per-100g": {
+            "energy": 113,
+            "carbohydrate": 4.1,
+            "fat": 0.1,
+            "protein": 2.5,
+            "vitamin-b2": 0.5,
+            "vitamin-b3": 3.8,
+            "vitamin-b5": 1.5,
+            "phosphorus": 120,
+            "potassium": 448,
+            "zinc": 1.1
+        }
     },
     {
         "id": "veg-cucumber-continental-fresh",
-        "name": "Cucumber"
+        "name": "Cucumber",
+        "nutrition-per-100g": {
+            "energy": 65,
+            "carbohydrate": 3.63,
+            "sugars": 1.67,
+            "dietary-fibre": 0.5,
+            "fat": 0.11,
+            "protein": 0.65,
+            "vitamin-k": 16.4
+        }
     },
     {
-        "id": "veg-capcicum-red-fresh",
-        "name": "Red Capcicum"
+        "id": "veg-capsicum-red-fresh",
+        "name": "Red Capcicum",
+        "nutrition-per-100g": {
+            "energy": 84,
+            "carbohydrate": 4.64,
+            "sugars": 2.4,
+            "dietary-fibre": 1.7,
+            "fat": 0.17,
+            "protein": 0.86,
+            "vitamin-b6": 0.224,
+            "vitamin-c": 80.4
+        }
     },
     {
         "id": "coles-dried-apricots",
