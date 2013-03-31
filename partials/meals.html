@@ -3,20 +3,18 @@
     <div class="meal-holder">
         <div class="meal-row" ng-repeat="meal in meals" ng-controller="MealIngredientListCtrl">
             <div class="row-fluid row-clickable" ng-show="mode == 'list'" ng-click="toggle()">
-                <a>
-                    <div class="span2">
-                            <span>{{meal.name || 'new meal'}}</span>
-                    </div>
-                    <div class="span6">
-                            <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}} [{{i.amount}}{{getFoodAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
-                            <span ng-show="meal.ingredients.length == 0">no ingredients</span>
-                    </div>
-                    <div class="span4" ng-controller="IngredientsSummaryCtrl">
-                            <span ng-repeat="n in summaryNutrientIds">
-                                {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
-                            </span>
-                    </div>
-                </a>
+                <div class="span2">
+                        <span>{{meal.name || 'new meal'}}</span>
+                </div>
+                <div class="span6">
+                        <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}} [{{i.amount}}{{getFoodAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
+                        <span ng-show="meal.ingredients.length == 0">no ingredients</span>
+                </div>
+                <div class="span4" ng-controller="IngredientsSummaryCtrl">
+                        <span ng-repeat="n in summaryNutrientIds">
+                            {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
+                        </span>
+                </div>
             </div>
             <div class="row-fluid" ng-show="mode == 'edit'">
                 <div class="span2">
