@@ -124,7 +124,13 @@ angular.module('nutritionControllers', ['nutritionServices']).
             var food = $scope.getFood(id);
             if (!food) return;
 
-            return ('nutrition-per-100g' in food) ? 'g' : 'ml';
+            if ('nutrition-per-100g' in food) {
+                return 'g';
+            } else if ('nutrition-per-100ml' in food) {
+                return 'ml';
+            } else {
+                return '';
+            }
         };
 
         $scope.getFoodName = function(id) {
@@ -163,7 +169,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
             var total = 0;
             angular.forEach($scope.ingredients, function(i) {
                 if (i.amount) {
-                    var nutrition = i.food['nutrition-per-100g'] || i.food['nutrition-per-100ml'];
+                    var nutrition = i.food['nutrition-per-100g'] || i.food['nutrition-per-100ml'] || {};
                     total += (nutrition[id] || 0) * (i.amount / 100);
                 }
             });
@@ -227,7 +233,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
                     if (i.amount) {
                         var food = $scope.getFood(i.food);
                         if (food === null) return;
-                        var nutrition = food['nutrition-per-100g'] || food['nutrition-per-100ml'];
+                        var nutrition = food['nutrition-per-100g'] || food['nutrition-per-100ml'] || {};
                         total += (nutrition[id] || 0) * (i.amount / 100);
                     }
                 });
