@@ -16,31 +16,41 @@
                         </span>
                 </div>
             </div>
-            <div class="row-fluid" ng-show="mode == 'edit'">
-                <div class="span2">
-                    <input class="span12" type="text" ng-model="meal.name" placeholder="Name">
+            <div ng-show="mode == 'edit'">
+                <div class="row-fluid">
+                    <div class="span12 pull-middle">
+                        <button class="btn btn-small btn-success" ng-click="toggle()"><i class="icon-ok icon-white"></i> done</button>
+                    </div>
                 </div>
-                <div class="span6">
-                    <table>
-                        <tbody>
-                            <tr ng-repeat="ing in ingredients">
-                                <td>{{ing.food.id}}</td>
-                                <td>
-                                    <div class="input-append">
-                                        <input type="number" ng-model="ing.amount">
-                                        <span class="add-on">{{getFoodAmountUnit(ing.food.id)}}</span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <button class="btn btn-small" ng-click="toggle()"><i class="icon-ok"></i> done</button>
+                <div class="row-fluid">
+                    <div class="span2">
+                        <input class="span12" type="text" ng-model="meal.name" placeholder="Name">
+                    </div>
+                    <div class="span6">
+                        <table>
+                            <tbody>
+                                <tr ng-repeat="ing in ingredients">
+                                    <td>{{ing.food.id}}</td>
+                                    <td>
+                                        <div class="input-append">
+                                            <input type="number" ng-model="ing.amount">
+                                            <span class="add-on">{{getFoodAmountUnit(ing.food.id)}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="span4" ng-controller="IngredientsSummaryCtrl"><!-- TODO: abstract this copy and pasted section -->
+                        <span ng-repeat="n in summaryNutrientIds">
+                            {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
+                        </span>
+                    </div>
                 </div>
-                <div class="span4" ng-controller="IngredientsSummaryCtrl"><!-- TODO: abstract this copy and pasted section -->
-                    <span ng-repeat="n in summaryNutrientIds">
-                        {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
-                    </span>
+                <div class="row-fluid">
+                    <div class="span12 pull-middle">
+                        <button class="btn btn-small btn-success" ng-click="toggle()"><i class="icon-ok icon-white"></i> done</button>
+                    </div>
                 </div>
             </div>
         </div>
