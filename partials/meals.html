@@ -43,8 +43,8 @@
                             </table>
                         </div>
                         <div class="span4" ng-controller="IngredientsSummaryCtrl"><!-- TODO: abstract this copy and pasted section -->
-                            <span ng-repeat="n in summaryNutrientIds">
-                                {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}<span ng-show="!$last">, </span>
+                            <span class="span3" ng-repeat="n in summaryNutrientIds">
+                                {{getSymbol(n)}}: {{getAmount(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}
                             </span>
                         </div>
                     </div>
