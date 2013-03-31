@@ -54,7 +54,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
             localStorageService.add('meals', localStorageService.stringifyJson(data));
         };
     }]).
-    controller('MealIngredientList', ['$scope', 'Food', function($scope, Food) {
+    controller('MealIngredientListCtrl', ['$scope', 'Food', function($scope, Food) {
         $scope.mode = 'list';
         $scope.food = Food.query(function(foods) {
             $scope.ingredients = [];

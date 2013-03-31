@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="meal in meals" ng-controller="MealIngredientList">
+            <tr ng-repeat="meal in meals" ng-controller="MealIngredientListCtrl">
                 <td><input type="text" placeholder="Name the new meal..." ng-model="meal.name"></td>
                 <td>
                     <div ng-switch on="mode">
