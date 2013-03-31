@@ -48,9 +48,19 @@ angular.module('nutritionControllers', ['nutritionServices']).
             $scope.storeMeals();
         };
 
+        $scope.removeMeal = function(meal) {
+            // TODO: prompt
+            var index = $scope.meals.indexOf(meal);
+
+            // The meal can be removed
+            if (index !== -1) {
+                $scope.meals.splice(index, 1);
+                $scope.storeMeals();
+            }
+        };
+
         $scope.storeMeals = function() {
             var data = {meals: $scope.meals};
-            // TODO: remove Food Resources from meal objects, as these break stringifying rules
             localStorageService.add('meals', localStorageService.stringifyJson(data));
         };
     }]).
