@@ -287,6 +287,30 @@
         }
     },
     {
+        "id": "fruit-avocado-fresh",
+        "name": "Avocado",
+        "nutrition-per-100g": {
+            "energy": 670,
+            "carbohydrate": 8.53,
+            "sugars": 0.66,
+            "dietary-fibre": 6.7,
+            "fat": 14.66,
+            "saturated-fat": 2.13,
+            "monounsaturated-fat": 9.8,
+            "polyunsaturated-fat": 1.82,
+            "protein": 2,
+            "vitamin-b2": 0.13,
+            "vitamin-b3": 1.738,
+            "vitamin-b5": 1.389,
+            "vitamin-b6": 0.257,
+            "vitamin-b9": 0.081,
+            "vitamin-c": 10,
+            "vitamin-e": 2.07,
+            "vitamin-k": 21,
+            "potassium": 485
+        }
+    },
+    {
         "id": "veg-broccoli-fresh",
         "name": "Broccoli",
         "nutrition-per-100g": {
@@ -526,6 +550,36 @@
             "sugars": 1.8,
             "dietary-fibre": 13,
             "sodium": 30
+        }
+    },
+    {
+        "id": "sunrice-brown-rice-uncooked",
+        "name": "Brown Rice",
+        "nutrition-per-100g": {
+            "energy": 1490,
+            "protein": 7.6,
+            "fat": 2.6,
+            "saturated-fat": 0.6,
+            "polyunsaturated-fat": 1,
+            "monounsaturated-fat": 1,
+            "carbohydrate": 72.5,
+            "sugars": 1,
+            "dietary-fibre": 3.9,
+            "sodium": 5,
+            "potassium": 266,
+            "vitamin-b1": 0.4,
+            "vitamin-b3": 6.4,
+            "magnesium": 111
+        }
+    },
+    {
+        "id": "supl-protein-pea-rice-mix",
+        "name": "Rice+Pea Protein Powder",
+        "nutrition-per-100g": {
+            "energy": 1490.5,
+            "protein": 81.65,
+            "carbohydrate": 3.8,
+            "fat": 1.05 
         }
     }
 ]
