@@ -1,4 +1,34 @@
+/* Global settings */
+
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+}
+
+/* Meals */
+
+.meal-holder {
+    margin: 10px 0;
+}
+
+.meal-holder a, .meal-holder a:hover {
+    color: #333333;
+}
+
+.meal-row {
+    border-top: 1px solid #dddddd;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.meal-holder .meal-row:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.meal-holder .meal-row:last-child {
+    border-bottom: 1px solid #dddddd;
+}
+
+.meal-row .span2:first-child {
+    padding-left: 4px;
 }
