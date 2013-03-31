@@ -13,6 +13,12 @@ a {
     text-align: center;
 }
 
+/* Rows */
+
+.row-clickable {
+    cursor: pointer;
+}
+
 /* Meals */
 
 .meal-holder {
