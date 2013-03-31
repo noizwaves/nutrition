@@ -11,7 +11,7 @@
                 <div class="span6">
                     <a ng-click="toggle()">
                         <span ng-repeat="i in meal.ingredients">{{getFoodName(i.food)}} [{{i.amount}}{{getFoodAmountUnit(i.food)}}]<span ng-show="!$last">, </span></span>
-                        <span ng-show="meal.ingredients.length == 0">+ Add ingredients</span>
+                        <span ng-show="meal.ingredients.length == 0">no ingredients</span>
                     </a>
                 </div>
                 <div class="span4" ng-controller="IngredientsSummaryCtrl">
