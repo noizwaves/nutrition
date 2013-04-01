@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="f in food" ng-controller="FoodItemCtrl">
-            <td>{{f.name}}</td>
+            <td>{{f.name}} <span ng-repeat="tag in f.tags"><span class="badge badge-info">{{tag}}</span>&nbsp;</span></td>
             <td ng-repeat="n in nutrients | filter:isBasic">
                 {{getAmount(n) | number:getPrecision(n)}}{{n.unit}}
             </td>
