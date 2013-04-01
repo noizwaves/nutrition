@@ -49,7 +49,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
         };
 
         $scope.removeMeal = function(meal) {
-            // TODO: prompt
+            // TODO: prompt user for confirmation?
             var index = $scope.meals.indexOf(meal);
 
             // The meal can be removed
@@ -57,6 +57,12 @@ angular.module('nutritionControllers', ['nutritionServices']).
                 $scope.meals.splice(index, 1);
                 $scope.storeMeals();
             }
+        };
+
+        $scope.removeAllMeals = function() {
+            // TODO: prompt user for confirmation
+            $scope.meals = [];
+            $scope.storeMeals();
         };
 
         $scope.storeMeals = function() {
