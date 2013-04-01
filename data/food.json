@@ -48,7 +48,8 @@
             "potassium": 15,
             "calcium": 75,
             "vitamin-e": 0.4
-        }
+        },
+        "tags": ["snack"]
     },
     {
         "id": "coles-soy-milk-regular",
@@ -100,7 +101,7 @@
             "sugars": 0.6,
             "sodium": 378
         },
-        "tags": ["legume"]
+        "tags": ["legume", "snack"]
     },
     {
         "id": "coles-hummus-lite",
@@ -114,7 +115,7 @@
             "sugars": 0.6,
             "sodium": 354
         },
-        "tags": ["legume"]
+        "tags": ["legume", "snack"]
     },
     {
         "id": "coles-hummus",
@@ -128,7 +129,7 @@
             "sugars": 0.6,
             "sodium": 347
         },
-        "tags": ["legume"]
+        "tags": ["legume", "snack"]
     },
     {
         "id": "sanitarium-natural-peanut-butter-crunchy",
@@ -644,7 +645,7 @@
             "sugars": 0.6,
             "dietary-fibre": 3
         },
-        "tags": ["carb"]
+        "tags": ["carb", "snack"]
     },
     {
         "id": "supl-protein-pea-rice-mix",
