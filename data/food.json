@@ -146,6 +146,27 @@
         "tags": ["legume"]
     },
     {
+        "id": "sanitarium-natural-peanut-butter-crunchy",
+        "name": "Peanut Butter",
+        "nutrition-per-100g": {
+            "energy": 2580,
+            "protein": 28,
+            "fat": 50,
+            "saturated-fat": 6,
+            "trans-fat": 0,
+            "polyunsaturated-fat": 5,
+            "monounsaturated-fat": 39,
+            "carbohydrate": 12,
+            "sugars": 5.0,
+            "dietary-fibre": 6,
+            "sodium": 8,
+            "potassium": 700,
+            "vitamin-b3": 12,
+            "magnesium": 150
+        },
+        "tags": ["snack"]
+    },
+    {
         "id": "coles-butter-beans-organic",
         "name": "Butter Beans",
         "nutrition-per-100g": {
@@ -605,6 +626,25 @@
             "magnesium": 111
         },
         "tags": ["carb", "grain"]
+    },
+    {
+        "id": "pureharvest-organic-rice-cakes",
+        "name": "Rice Cakes",
+        "nutrition-per-100g": {
+            "energy": 1620,
+            "protein": 7.9,
+            "fat": 3.2,
+            "saturated-fat": 0.9,
+            "trans-fat": 0,
+            "polyunsaturated-fat": 1.1,
+            "monounsaturated-fat": 1.2,
+            "carbohydrate": 79.1,
+            "sugars": 0.5,
+            "dietary-fibre": 3.1,
+            "sodium": 222,
+            "calcium": 13
+        },
+        "tags": ["carb", "snack"]
     },
     {
         "id": "supl-protein-pea-rice-mix",
