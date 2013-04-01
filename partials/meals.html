@@ -39,7 +39,16 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="span6"></div>
+                        <div class="span6">
+                            <h4>Tags</h4>
+                            <div>
+                                <span ng-repeat="tag in getTags() | unique" ng-controller="TagCtrl">
+                                    <span class="badge" ng-class="(isMultiple && 'badge-important') || 'badge-info'">
+                                        {{label}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div ng-switch-when="edit">
@@ -100,6 +109,17 @@
                 {{getName(n)}}: {{getTotal(n) | number:getPrecision(n)}}{{getAmountUnit(n)}}
             </span>
         </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <span ng-repeat="tag in getTags() | unique" ng-controller="TagCtrl">
+                    <span class="badge" ng-class="(isMultiple && 'badge-important') || 'badge-info'">
+                        {{label}}
+                    </span>
+                </span>
+            </div>
+        </div>
     </div>
+
+
 
 </div>

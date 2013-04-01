@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('nutritionControllers', ['nutritionServices']).
+angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']).
     controller('FoodCtrl', ['$scope', 'Food', function($scope, Food) {
         $scope.food = Food.query();
     }]).
@@ -70,7 +70,7 @@ angular.module('nutritionControllers', ['nutritionServices']).
             localStorageService.add('meals', localStorageService.stringifyJson(data));
         };
     }]).
-    controller('MealIngredientListCtrl', ['$scope', 'Food', function($scope, Food) {
+    controller('MealIngredientListCtrl', ['$scope', '$filter', 'Food', function($scope, $filter, Food) {
         $scope.mode = 'list';
         $scope.food = Food.query(function(foods) {
             $scope.ingredients = [];
@@ -162,6 +162,30 @@ angular.module('nutritionControllers', ['nutritionServices']).
             if (!food) return;
 
             return food.name;
+        };
+
+        $scope.getTags = function() {
+            var output = [];
+            angular.forEach($scope.ingredients, function(i) {
+                if (angular.isNumber(i.amount)) {
+                    output.push.apply(output, i.food.tags || []);
+                }
+            });
+            return output;
+        };
+
+        $scope.getTagCount = function(tag) {
+            var count = 0;
+            angular.forEach($scope.ingredients, function(i) {
+                if (angular.isNumber(i.amount)) {
+                    angular.forEach(i.food.tags, function(t) {
+                        if (angular.equals(tag, t)) {
+                            count++;
+                        }
+                    });
+                }
+            });
+            return count;
         };
     }]).
     controller('IngredientsSummaryCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
@@ -275,4 +299,46 @@ angular.module('nutritionControllers', ['nutritionServices']).
 
             return (specific || {}).unit;
         };
+
+        $scope.getTags = function() {
+            var output = [];
+            angular.forEach($scope.meals, function(m) {
+                angular.forEach(m.ingredients, function(i) {
+                    if (angular.isNumber(i.amount)) {
+                        var food = $scope.getFood(i.food);
+                        if (food) {
+                            output.push.apply(output, food.tags || []);
+                        }
+                    }
+                });
+            });
+            return output;
+        };
+
+        $scope.getTagCount = function(tag) {
+            var count = 0;
+            angular.forEach($scope.meals, function(m) {
+                angular.forEach(m.ingredients, function(i) {
+                    if (angular.isNumber(i.amount)) {
+                        var food = $scope.getFood(i.food);
+                        angular.forEach(food.tags, function(t) {
+                            if (angular.equals(tag, t)) {
+                                count++;
+                            }
+                        });
+                    }
+                });
+            });
+            return count;
+        };
+    }]).
+    controller('TagCtrl', ['$scope', function($scope) {
+        var tag = $scope.tag;
+
+        $scope.isMultiple = $scope.getTagCount(tag) != 1;
+
+        $scope.label = tag;
+        if ($scope.getTagCount(tag) != 1) {
+            $scope.label += " x " + $scope.getTagCount(tag);
+        }
     }]);

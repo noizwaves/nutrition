@@ -12,11 +12,29 @@ angular.module('nutritionFilters', []).
                 }
                 if (current === null || current.length === n) {
                     current = [];
-                    output.push(current);                    
+                    output.push(current);
                 }
 
                 current.push(item);
             });
+            return output;
+        };
+    }).
+    filter('unique', function() {
+        /* Returns only unique items from an array */
+
+        return function(items) {
+            if (!items) return items;
+
+            var output = [];
+            var state = {};
+            angular.forEach(items, function(item) {
+                if (!(item in state)) {
+                    output.push(item);
+                    state[item] = null;
+                }
+            });
+
             return output;
         };
     });
