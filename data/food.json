@@ -150,7 +150,41 @@
             "vitamin-b3": 12,
             "magnesium": 150
         },
-        "tags": ["snack"]
+        "tags": ["snack", "nut"]
+    },
+    {
+        "id": "macro-organic-peanut-butter-crunchy",
+        "name": "Peanut Butter",
+        "nutrition-per-100g": {
+            "energy": 2670,
+            "protein": 28.4,
+            "fat": 50.9,
+            "saturated-fat": 10.2,
+            "trans-fat": 0.1,
+            "polyunsaturated-fat": 15.9,
+            "monounsaturated-fat": 22.7,
+            "carbohydrate": 18,
+            "sugars": 5.5,
+            "sodium": 1
+        },
+        "tags": ["snack", "nut"]
+    },
+    {
+        "id": "macro-organic-tahini-unhulled",
+        "name": "Tahini",
+        "nutrition-per-100g": {
+            "energy": 2760,
+            "protein": 25.6,
+            "fat": 57.3,
+            "saturated-fat": 8.3,
+            "trans-fat": 0.1,
+            "polyunsaturated-fat": 23.8,
+            "monounsaturated-fat": 22.9,
+            "carbohydrate": 12,
+            "sugars": 1,
+            "sodium": 7
+        },
+        "tags": ["seed"]
     },
     {
         "id": "coles-butter-beans-organic",
