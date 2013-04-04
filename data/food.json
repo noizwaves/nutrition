@@ -416,6 +416,26 @@
     {
         "id": "veg-baby-spinach-leaves-fresh",
         "name": "Baby Spinach",
+        "nutrition-per-100g": {
+            "energy": 97,
+            "carbohydrate": 3.6,
+            "sugars": 0.4,
+            "dietary-fibre": 2.2,
+            "fat": 0.4,
+            "protein": 2.9,
+            "vitamin-a": 469,
+            "vitamin-b2": 0.189,
+            "vitamin-b6": 0.195,
+            "vitamin-b9": 0.194,
+            "vitamin-c": 28,
+            "vitamin-e": 2,
+            "vitamin-k": 483,
+            "calcium": 99,
+            "iron": 2.7,
+            "magnesium": 79,
+            "manganese": 0.897,
+            "potassium": 558
+        },
         "tags": ["vegetable", "leafy green vegetable"]
     },
     {
@@ -430,6 +450,26 @@
             "vitamin-a": 243,
             "vitamin-c": 45,
             "calcium": 105
+        },
+        "tags": ["vegetable", "leafy green vegetable"]
+    },
+    {
+        "id": "veg-brussels-sprout-raw",
+        "name": "Brussels Sprouts",
+        "nutrition-per-100g": {
+            "energy": 179,
+            "carbohydrate": 8.95,
+            "sugars": 2.2,
+            "dietary-fibre": 3.8,
+            "fat": 0.3,
+            "protein": 3.38,
+            "vitamin-b1": 0.139,
+            "vitamin-b6": 0.219,
+            "vitamin-c": 85,
+            "vitamin-k": 177,
+            "iron": 1.4,
+            "manganese": 0.337,
+            "phosphorus": 69
         },
         "tags": ["vegetable", "leafy green vegetable"]
     },
@@ -590,6 +630,29 @@
             "sugars": 2.0,
             "dietary-fibre": 27.3,
             "sodium": 66
+        },
+        "tags": ["seed"]
+    },
+    {
+        "id": "seed-pumpkin-dried",
+        "name": "Pumpkin Seeds",
+        "nutrition-per-100g": {
+            "energy": 721,
+            "protein": 30.23,
+            "fat": 49.05,
+            "saturated-fat": 8.659,
+            "monounsaturated-fat": 16.242,
+            "polyunsaturated-fat": 20.976,
+            "carbohydrate": 10.71,
+            "dietary-fibre": 6,
+            "sugars": 1.40,
+            "calcium": 46,
+            "iron": 8.82,
+            "magnesium": 592,
+            "phosphorus": 1233,
+            "potassium": 809,
+            "sodium": 7,
+            "zinc": 7.81
         },
         "tags": ["seed"]
     },
