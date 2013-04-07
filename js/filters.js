@@ -37,4 +37,24 @@ angular.module('nutritionFilters', []).
 
             return output;
         };
+    }).
+    filter('isBasicNutrient', function() {
+        /* Returns only those nutrients that are the basic ones */
+
+        var basicNutrients = ['energy','protein','fat','carbohydrate'];
+
+        return function(items) {
+            if (!items) return items;
+
+            var output = [];
+            angular.forEach(items, function(item) {
+                angular.forEach(basicNutrients, function(basic) {
+                    if (angular.equals(item.id, basic)) {
+                        output.push(item);
+                    }
+                });
+            });
+
+            return output;
+        };
     });

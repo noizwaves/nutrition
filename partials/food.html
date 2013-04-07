@@ -4,15 +4,15 @@
     <thead>
         <tr>
             <th></th>
-            <th ng-repeat="n in nutrients | filter:isBasic">
+            <th ng-repeat="n in nutrients() | isBasicNutrient">
                 {{n.name || n.id}}
             </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="f in food" ng-controller="FoodItemCtrl">
+        <tr ng-repeat="f in food()" ng-controller="FoodItemCtrl">
             <td><span title="{{f.id}}">{{f.name}}</span> <span ng-repeat="tag in f.tags"><span class="badge badge-info">{{tag}}</span>&nbsp;</span></td>
-            <td ng-repeat="n in nutrients | filter:isBasic">
+            <td ng-repeat="n in nutrients() | isBasicNutrient">
                 {{getAmount(n) | number:getPrecision(n)}}{{n.unit}}
             </td>
         </tr>

@@ -3,22 +3,11 @@
 /* Controllers */
 
 angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']).
-    controller('FoodCtrl', ['$scope', 'Food', function($scope, Food) {
-        $scope.food = Food.query();
+    controller('FoodCtrl', ['$scope', 'FoodList', function($scope, FoodList) {
+        $scope.food = FoodList.list;
     }]).
-    controller('BasicFoodListCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
-        // TODO: make these Nurtient resources
-        var basicNutrients = ['energy','protein','fat','carbohydrate'];
-
-        $scope.nutrients = Nutrient.query();
-
-        $scope.isBasic = function(n) {
-            var found = false;
-            angular.forEach(basicNutrients, function(bn) {
-                found |= angular.equals(bn, n.id);
-            });
-            return found;
-        };
+    controller('BasicFoodListCtrl', ['$scope', 'NutrientList', function($scope, NutrientList) {
+        $scope.nutrients = NutrientList.list;
     }]).
     controller('FoodItemCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
         var food = $scope.f;
