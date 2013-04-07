@@ -3,26 +3,26 @@
 /* Controllers */
 
 angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']).
-    controller('FoodCtrl', ['$scope', 'FoodList', function($scope, FoodList) {
+    controller('FoodListCtrl', ['$scope', 'FoodList', 'NutrientList', function($scope, FoodList, NutrientList) {
         $scope.food = FoodList.list;
-    }]).
-    controller('BasicFoodListCtrl', ['$scope', 'NutrientList', function($scope, NutrientList) {
         $scope.nutrients = NutrientList.list;
     }]).
-    controller('FoodItemCtrl', ['$scope', 'Nutrient', function($scope, Nutrient) {
-        var food = $scope.f;
-        var nutrients = food['nutrition-per-100g'] || food['nutrition-per-100ml'] || {};
-
-        $scope.getPrecision = function(nutrient) {
-            return nutrient.precision || 0;
+    controller('FoodNutritionCtrl', ['$scope', function($scope) {
+        var getNutrition = function() {
+            var food = $scope.food;
+            return food['nutrition-per-100g'] || food['nutrition-per-100ml'] || {};
         };
 
-        $scope.getUnit = function(nutrient) {
-            return nutrient.unit || '';
+        $scope.getPrecision = function() {
+            return $scope.nutrient.precision || 0;
         };
 
-        $scope.getAmount = function(nutrient) {
-            return nutrients[nutrient.id] || '-';
+        $scope.getUnit = function() {
+            return $scope.nutrient.unit || '';
+        };
+
+        $scope.getAmount = function() {
+            return getNutrition()[$scope.nutrient.id] || '-';
         };
     }]).
     controller('MealListCtrl', ['$scope', 'Food', 'localStorageService', function($scope, Food, localStorageService) {

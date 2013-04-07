@@ -12,5 +12,14 @@ angular.module('nutritionDirectives', ['nutritionControllers'])
         };
     }).
     directive('nuFoodNutrition', function() {
-
+        return {
+            restrict: 'AE',
+            replace: true,
+            scope: {
+                food: '=nuFood',
+                nutrient: '=nuNutrient'
+            },
+            template: '<span>{{getAmount() | number:getPrecision()}}{{getUnit()}}</span>',
+            controller: 'FoodNutritionCtrl'
+        };
     });

@@ -1,6 +1,6 @@
 <h3>Food Items</h3>
 
-<table class="table table-striped" ng-controller="BasicFoodListCtrl">
+<table class="table table-striped" ng-controller="FoodListCtrl">
     <thead>
         <tr>
             <th></th>
@@ -10,10 +10,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="f in food()" ng-controller="FoodItemCtrl">
+        <tr ng-repeat="f in food()">
             <td><span title="{{f.id}}">{{f.name}}</span> <nu-food-tags nu-tags="f.tags"></nu-food-tags></td>
             <td ng-repeat="n in nutrients() | isBasicNutrient">
-                {{getAmount(n) | number:getPrecision(n)}}{{n.unit}}
+                <nu-food-nutrition nu-food="f" nu-nutrient="n"></nu-food-nutrition>
             </td>
         </tr>
     </tbody>
