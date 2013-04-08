@@ -1,22 +1,8 @@
 'use strict'
 
-/* Data Services */
-
-var module = angular.module('nutritionServices', ['ngResource']);
-module.
-    factory('Food', function($resource) {
-        return $resource('data/food.json', {}, {
-            query: {method:'GET', isArray:true}
-        });
-    }).
-    factory('Nutrient', function($resource) {
-        return $resource('data/nutrients.json', {}, {
-            query: {method:'GET', isArray:true}
-        });
-    });
-
 /* Services */
-module.
+
+angular.module('nutritionServices', ['nutritionModels']).
     factory('FoodList', ['Food', function(Food) {
         var items = Food.query();
 
@@ -33,5 +19,37 @@ module.
             list: function() {
                 return items;
             }
+        };
+    }]).
+    factory('MealList', ['localStorageService', function(localStorageService) {
+        var items = localStorageService.parseJson(localStorageService.get('meals') || "{\"meals\": []}").meals;
+
+        var store = function() {
+            localStorageService.add('meals', localStorageService.stringifyJson({meals: items}));
+        };
+
+        return {
+            list: function() {
+                return items;
+            },
+            add: function() {
+                items.push({
+                    name: '',
+                    ingredients: []
+                });
+                store();
+            },
+            remove: function(meal) {
+                var index = items.indexOf(meal);
+                if (index !== -1) {
+                    items.splice(index, 1);
+                    store();
+                }
+            },
+            clear: function() {
+                items = [];
+                store();
+            },
+            store: store
         };
     }]);

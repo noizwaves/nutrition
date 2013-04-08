@@ -25,39 +25,12 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
             return getNutrition()[$scope.nutrient.id] || '-';
         };
     }]).
-    controller('MealListCtrl', ['$scope', 'Food', 'localStorageService', function($scope, Food, localStorageService) {
-        $scope.meals = localStorageService.parseJson(localStorageService.get('meals') || "{\"meals\": []}").meals;
-
-        $scope.addMeal = function() {
-            $scope.meals.push({
-                name: '',
-                ingredients: []
-            });
-
-            $scope.storeMeals();
-        };
-
-        $scope.removeMeal = function(meal) {
-            // TODO: prompt user for confirmation?
-            var index = $scope.meals.indexOf(meal);
-
-            // The meal can be removed
-            if (index !== -1) {
-                $scope.meals.splice(index, 1);
-                $scope.storeMeals();
-            }
-        };
-
-        $scope.removeAllMeals = function() {
-            // TODO: prompt user for confirmation
-            $scope.meals = [];
-            $scope.storeMeals();
-        };
-
-        $scope.storeMeals = function() {
-            var data = {meals: $scope.meals};
-            localStorageService.add('meals', localStorageService.stringifyJson(data));
-        };
+    controller('MealListCtrl', ['$scope', 'MealList', function($scope, MealList) {
+        $scope.meals = MealList.list;
+        $scope.addMeal = MealList.add;
+        $scope.removeMeal = MealList.remove;
+        $scope.removeAllMeals = MealList.clear;
+        $scope.storeMeals = MealList.store;
     }]).
     controller('MealIngredientListCtrl', ['$scope', '$filter', 'Food', function($scope, $filter, Food) {
         $scope.mode = 'list';
@@ -265,7 +238,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
 
         $scope.getTotal = function(id) {
             var total = 0;
-            angular.forEach($scope.meals, function(m) {
+            angular.forEach($scope.meals(), function(m) {
                 angular.forEach(m.ingredients, function(i) {
                     if (i.amount) {
                         var food = $scope.getFood(i.food);
@@ -291,7 +264,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
 
         $scope.getTags = function() {
             var output = [];
-            angular.forEach($scope.meals, function(m) {
+            angular.forEach($scope.meals(), function(m) {
                 angular.forEach(m.ingredients, function(i) {
                     if (angular.isNumber(i.amount)) {
                         var food = $scope.getFood(i.food);
@@ -306,7 +279,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
 
         $scope.getTagCount = function(tag) {
             var count = 0;
-            angular.forEach($scope.meals, function(m) {
+            angular.forEach($scope.meals(), function(m) {
                 angular.forEach(m.ingredients, function(i) {
                     if (angular.isNumber(i.amount)) {
                         var food = $scope.getFood(i.food);

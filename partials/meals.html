@@ -1,7 +1,7 @@
 <div ng-controller="MealListCtrl">
     <h3>Meals</h3>
     <div class="meal-holder">
-        <div class="meal-row" ng-repeat="meal in meals" ng-controller="MealIngredientListCtrl">
+        <div class="meal-row" ng-repeat="meal in meals()" ng-controller="MealIngredientListCtrl">
             <ng-switch on="mode">
                 <div class="row-fluid row-clickable" ng-switch-when="list" ng-click="gotoDetailFromList()">
                     <div class="span2">
