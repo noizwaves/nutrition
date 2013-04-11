@@ -4,11 +4,17 @@
 
 angular.module('nutritionServices', ['nutritionModels']).
     factory('FoodList', ['Food', function(Food) {
-        var items = Food.query();
+        var timestamp = new Date().getTime();
+        var items = Food.query(function() {
+            timestamp = new Date().getTime();
+        });
 
         return {
             list: function() {
                 return items;
+            },
+            timestamp: function() {
+                return timestamp;
             }
         };
     }]).
@@ -23,9 +29,15 @@ angular.module('nutritionServices', ['nutritionModels']).
     }]).
     factory('MealList', ['localStorageService', function(localStorageService) {
         var items = localStorageService.parseJson(localStorageService.get('meals') || "{\"meals\": []}").meals;
+        var timestamp = new Date().getTime();
+
+        var markChanged = function() {
+            timestamp = new Date().getTime();
+        };
 
         var store = function() {
             localStorageService.add('meals', localStorageService.stringifyJson({meals: items}));
+            markChanged();
         };
 
         return {
@@ -50,6 +62,9 @@ angular.module('nutritionServices', ['nutritionModels']).
                 items = [];
                 store();
             },
-            store: store
+            store: store,
+            timestamp: function() {
+                return timestamp;
+            }
         };
     }]);
