@@ -42,11 +42,12 @@
                         <div class="span6">
                             <h4>Tags</h4>
                             <div>
-                                <span ng-repeat="tag in getTags() | unique" ng-controller="TagCtrl">
+                                <nu-meal-tags nu-meal="meal"></nu-meal-tags>
+                                <!--<span ng-repeat="tag in getTags() | unique" ng-controller="TagCtrl">
                                     <span class="badge" ng-class="(isMultiple && 'badge-important') || 'badge-info'">
                                         {{label}}
                                     </span>
-                                </span>
+                                </span>-->
                             </div>
                         </div>
                     </div>

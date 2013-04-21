@@ -264,6 +264,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
     }]).
     controller('TagCtrl', ['$scope', 'MealList', function($scope, MealList) {
         $scope.$watch(function() {
+            // Whenever any meal changes...
             return MealList.timestamp();
         }, function(newValue, oldValue) {
             var tag = $scope.tag;
@@ -272,6 +273,44 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
             if ($scope.getTagCount(tag) != 1) {
                 $scope.label += " x " + $scope.getTagCount(tag);
             }
+        });
+    }]).
+    controller('MealTagCtrl', ['$scope', 'FoodList', function($scope, FoodList) {
+        $scope.tags = [];
+
+        $scope.getTagCount = function(tag) {
+            var count = 0;
+            angular.forEach($scope.tags, function(t) {
+                if (angular.equals(tag, t)) {
+                    count++;
+                }
+            });
+            return count;
+        };
+
+        var getFood = function(id) {
+            var food = null;
+            angular.forEach(FoodList.list(), function(f) {
+                if (angular.equals(f.id, id)) {
+                    food = f;
+                }
+            });
+            return food;
+        };
+
+        $scope.$watch(function() {
+            // Whenever the scoped meal changes
+            return $scope.meal.ingredients.length;
+        }, function(newValue, oldValue) {
+            // Meals have changed
+            var tags = [];
+            angular.forEach($scope.meal.ingredients, function(i) {
+                var food = getFood(i.food);
+                if (food) {
+                    tags.push.apply(tags, food.tags || []);
+                }
+            });
+            $scope.tags = tags;
         });
     }]).
     controller('MealsTagCtrl', ['$scope', 'MealList', 'FoodList', function($scope, MealList, FoodList) {
@@ -298,7 +337,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
         };
 
         $scope.$watch(function() {
-            // If meals are changed, or when Food loads
+            // Whenever any meal changes or when food list loads
             return MealList.timestamp() + FoodList.timestamp();
         }, function(newValue, oldValue) {
             // Meals have changed
