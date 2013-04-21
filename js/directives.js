@@ -12,13 +12,13 @@ angular.module('nutritionDirectives', ['nutritionControllers'])
             template: '<span ng-repeat="tag in tags"><span class="badge badge-info">{{tag}}</span>&nbsp;</span>'
         };
     }).
-    directive('nuMealTags', function() {
+    directive('nuMealsTags', function() {
         // Can have multiple instnaces of a tag
         return {
             restrict: 'AE',
             replace: true,
-            isolated: true,
-            controller: 'MealTagCtrl',
+            scope: { },
+            controller: 'MealsTagCtrl',
             template: '<span ng-repeat="tag in tags | unique"><span ng-controller="TagCtrl" class="badge" ng-class="(isMultiple && \'badge-important\') || \'badge-info\'">{{label}}</span>&nbsp;</span>'
         };
     }).

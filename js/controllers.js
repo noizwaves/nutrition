@@ -274,7 +274,7 @@ angular.module('nutritionControllers', ['nutritionServices', 'nutritionFilters']
             }
         });
     }]).
-    controller('MealTagCtrl', ['$scope', 'MealList', 'FoodList', function($scope, MealList, FoodList) {
+    controller('MealsTagCtrl', ['$scope', 'MealList', 'FoodList', function($scope, MealList, FoodList) {
         $scope.tags = [];
 
         $scope.getTagCount = function(tag) {
