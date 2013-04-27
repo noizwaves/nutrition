@@ -754,5 +754,42 @@
             "fat": 1.05 
         },
         "tags": ["supplement"]
+    },
+    {
+        "id": "sweet-william-choc-original",
+        "name": "Sweet William Chocolate",
+        "nutrition-per-100g": {
+            "energy": 2160,
+            "protein": 7.9,
+            "fat": 31,
+            "saturated-fat": 16.1,
+            "trans-fat": 0,
+            "polyunsaturated-fat": 3.3,
+            "monounsaturated-fat": 9.9,
+            "carbohydrate": 55.8,
+            "sugars": 42.4,
+            "dietary-fibre": 6,
+            "sodium": 5.4
+        },
+        "tags": ["snack", "carb"]
+    },
+    {
+        "id": "red-rock-chips-chilli-salt",
+        "name": "Chips (Chilli & Sea Salt)",
+        "nutrition-per-100g": {
+            "energy": 2050,
+            "protein": 7.9,
+            "fat": 23.4,
+            "saturated-fat": 3.2,
+            "trans-fat": 0.1,
+            "polyunsaturated-fat": 1.7,
+            "monounsaturated-fat": 18.4,
+            "carbohydrate": 62,
+            "sugars": 2.4,
+            "dietary-fibre": 4,
+            "sodium": 579,
+            "potassium": 1220
+        },
+        "tags": ["snack", "carb"]
     }
 ]
